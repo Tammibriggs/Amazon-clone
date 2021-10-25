@@ -4,13 +4,14 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from 'react-router-dom'
 import {useStateValue} from '../StateProvider'
 import {auth} from '../firebase'
+import {signOut} from 'firebase/auth'
 
 function Header() {
   const [{basket, user}, dispatch] = useStateValue()
 
   const handleAuthentication = () => {
     if(user) {
-       auth.signOut()
+       signOut(auth)
     }
   }
     return (

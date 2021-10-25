@@ -9,6 +9,7 @@ import CurrencyFormat from 'react-currency-format'
 import {useHistory} from 'react-router-dom'
 import axios from './axios'
 import {db} from '../firebase'
+import {doc, setDoc} from 'firebase/firestore'
 
 function Payment() {
   const history = useHistory()
@@ -38,16 +39,12 @@ function Payment() {
     event.preventDefault()
     setProcessing(true)
 
-    const payload = await stripe.confirmCardPayment(clientSecret, {payment_method: {
+    stripe.confirmCardPayment(clientSecret, {payment_method: {
       card: elements.getElement(CardElement)
     }}).then(({paymentIntent}) => {
       //paymentIntent = payment confirmation
-      db
-      .collection('users')
-      .doc(user?.uid)
-      .collection('orders')
-      .doc(paymentIntent.id)
-      .set({
+      const ref = doc(db, 'users', user?.uid, 'orders', paymentIntent.id)
+      setDoc(ref, {
         basket: basket,
         amount: paymentIntent.amount,
         created: paymentIntent.created

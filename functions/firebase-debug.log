@@ -3968,3 +3968,50 @@ For CI servers and headless environments, generate a new token with firebase log
 [debug] [2021-09-08T06:12:48.171Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 08 Sep 2021 06:12:47 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [debug] [2021-09-08T06:12:48.455Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/challange-5f99e/serviceAccounts/challange-5f99e@appspot.gserviceaccount.com:testIamPermissions  
  {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-10-25T00:03:41.306Z] ----------------------------------------------------------------------
+[debug] [2021-10-25T00:03:41.327Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2021-10-25T00:03:41.331Z] CLI Version:   9.20.0
+[debug] [2021-10-25T00:03:41.332Z] Platform:      win32
+[debug] [2021-10-25T00:03:41.333Z] Node Version:  v14.17.5
+[debug] [2021-10-25T00:03:41.339Z] Time:          Mon Oct 25 2021 01:03:41 GMT+0100 (West Africa Standard Time)
+[debug] [2021-10-25T00:03:41.340Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-25T00:03:41.409Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-10-25T00:03:42.209Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-25T00:03:42.211Z] > authorizing via signed-in user (godsfirstbriggs@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project challange-5f99e. This may result in unexpected behavior. 
+[debug] [2021-10-25T00:03:43.370Z] [hub] writing locator at C:\Users\USER\AppData\Local\Temp\hub-challange-5f99e.json
+[debug] [2021-10-25T00:03:43.991Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-10-25T00:03:43.993Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@14 from host."}}
+[debug] [2021-10-25T00:03:44.570Z] defaultcredentials: writing to file C:\Users\USER\AppData\Roaming\firebase\godsfirstbriggs_gmail_com_application_default_credentials.json
+[debug] [2021-10-25T00:03:44.603Z] Setting GAC to C:\Users\USER\AppData\Roaming\firebase\godsfirstbriggs_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\USER\\AppData\\Roaming\\firebase\\godsfirstbriggs_gmail_com_application_default_credentials.json"}}
+[debug] [2021-10-25T00:03:44.612Z] > refreshing access token with scopes: []
+[debug] [2021-10-25T00:03:44.617Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-25T00:03:45.458Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Mon, 25 Oct 2021 00:03:45 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-25T00:03:45.908Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/adminSdkConfig [none]
+[debug] [2021-10-25T00:03:47.050Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/adminSdkConfig 200
+[debug] [2021-10-25T00:03:47.052Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/adminSdkConfig {"projectId":"challange-5f99e","storageBucket":"challange-5f99e.appspot.com","locationId":"us-central"}
+[debug] [2021-10-25T00:03:48.257Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/challange-5f99e/sites 
+[debug] [2021-10-25T00:03:50.566Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/challange-5f99e/sites 200
+[debug] [2021-10-25T00:03:50.567Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/challange-5f99e/sites {"sites":[{"name":"projects/124606272614/sites/challange-5f99e","defaultUrl":"https://challange-5f99e.web.app","appId":"1:124606272614:web:2dcb2718dda2ada4e449a7","type":"DEFAULT_SITE"}]}
+[debug] [2021-10-25T00:03:50.571Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/webApps/1:124606272614:web:2dcb2718dda2ada4e449a7/config [none]
+[debug] [2021-10-25T00:03:52.656Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/webApps/1:124606272614:web:2dcb2718dda2ada4e449a7/config 200
+[debug] [2021-10-25T00:03:52.657Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/challange-5f99e/webApps/1:124606272614:web:2dcb2718dda2ada4e449a7/config {"projectId":"challange-5f99e","appId":"1:124606272614:web:2dcb2718dda2ada4e449a7","storageBucket":"challange-5f99e.appspot.com","locationId":"us-central","apiKey":"AIzaSyAqvB3a-9rpvrbA1rUWERAC0y2NhD-53vA","authDomain":"challange-5f99e.firebaseapp.com","messagingSenderId":"124606272614","measurementId":"G-WNKYJ2159E"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2021-10-25T00:03:56.311Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-10-25T00:03:56.314Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-10-25T00:03:56.318Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\USER\\.cache\\firebase\\emulators\\ui-v1.6.3\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\USER\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.6.3\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-10-25T00:03:57.191Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "C:\Users\USER\Downloads\Tammy folder\React\Amazon-clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\USER\\Downloads\\Tammy folder\\React\\Amazon-clone\\functions\" for Cloud Functions..."}}
+[debug] [2021-10-25T00:03:57.845Z] [worker-pool] addWorker(~diagnostic~) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(~diagnostic~)"}}
+[debug] [2021-10-25T00:03:57.848Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key ~diagnostic~, total=1"}}
+[debug] [2021-10-25T00:03:57.849Z] [worker-pool] submitWork(triggerId=) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=)"}}
+[debug] [2021-10-25T00:03:57.851Z] [worker-~diagnostic~-6366b68a-e9d4-4409-99d2-eb6a63f6990f]: Assigning socketPath: \\?\pipe\C:\Users\USER\Downloads\Tammy folder\React\Amazon-clone\functions\6800 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-6366b68a-e9d4-4409-99d2-eb6a63f6990f]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\USER\\Downloads\\Tammy folder\\React\\Amazon-clone\\functions\\6800"}}
+[debug] [2021-10-25T00:03:57.856Z] [worker-~diagnostic~-6366b68a-e9d4-4409-99d2-eb6a63f6990f]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-6366b68a-e9d4-4409-99d2-eb6a63f6990f]: BUSY"}}
