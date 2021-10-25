@@ -55,6 +55,12 @@ function Payment() {
       })
       history.replace('/orders')
     })
+    .catch( () => {
+      alert(`Unable to process payment
+      \nUse a sequence of "42" for card payment`)
+      setError(null)
+      setProcessing(false)
+    })
   }
 
   const handleChange = event => {
@@ -103,10 +109,15 @@ function Payment() {
         <div className="payment__section">
           <div className="payment__title">
             <h3>Payment Method</h3> 
+            <small>
+              Use a sequence of "42" for card payment
+            </small>
           </div>
           <div className="payment__details">
 
             <form onSubmit={handleSubmit}>
+              {/* Errors */}
+              {error && <div style={{color:'red'}}>{error}</div>}
               <CardElement onChange={handleChange}/>
               <div className="payment__priceContainer">
                 <CurrencyFormat 
@@ -123,9 +134,6 @@ function Payment() {
                   <span>{processing ? <p>Processing</p>: "Buy Now"}</span>
                 </button>
               </div>
-
-              {/* Errors */}
-              {error && <div>{error}</div>}
             </form>
 
           </div>

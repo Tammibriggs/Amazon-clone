@@ -7,6 +7,15 @@ import {useHistory} from 'react-router-dom'
 function Subtotal() {
   const history = useHistory()
   const [{basket, user}, dispatch] = useStateValue()
+
+  const proceedToPayment = () => {
+    if (basket.length){
+      user ? history.push('/payment') : history.push('/login')
+    }else {
+      alert('Shopping cart is empty')
+    }
+  }
+  
   return (
     <div className="subtotal">
       {/* An easy way to display currency */}
@@ -27,7 +36,9 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />   
-      <button onClick={e => {user ? history.push('/payment') : history.push('/login')}} >Proceed to Checkout</button>
+<button onClick={proceedToPayment} >
+  Proceed to Checkout
+</button>
     </div>
   )
 }

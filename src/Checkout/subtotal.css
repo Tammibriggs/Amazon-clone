@@ -33,6 +33,7 @@
   margin-top: 10px;
   color: #111; 
   border: none;
+  cursor: pointer;
 }
 
 .subtotal > button:active{

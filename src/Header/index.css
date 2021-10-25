@@ -9,6 +9,7 @@
 .header__container{
     display: flex;
     align-items: center;
+    padding: 10px 0;
 }
 
 .header__logo{
@@ -16,6 +17,7 @@
     object-fit: contain;
     margin: 0 20px;
     margin-top: 18px; 
+    margin-top: 18px;
     padding: 10px 10px 0px 10px;
 }
 
@@ -132,8 +134,15 @@
     }
 }
 
-@media(max-width: 430px){
+@media(max-width: 400px){
+    .header__logo{
+        width: 70px;
+    }
+}
+
+@media(max-width: 370px){
     .header--option{
         display: none;
     }
-}
+
+} 

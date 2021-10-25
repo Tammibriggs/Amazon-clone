@@ -27,6 +27,12 @@
   margin-right: 10px;
 }
 
+.payment__title > small{
+  color: rgb(40, 117, 98);
+  display: block;
+  margin-bottom: 10px;
+}
+
 .payment__address, .payment__items, .payment__details{
   flex: 0.8;
 }
@@ -49,7 +55,16 @@
   margin-top: 10px;
   color: #111;
   border: unset;
+  cursor: pointer;
 }
+
+.StripeElement{
+  border: 1px solid lightgray;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
 
 @media(max-width:600px){
   .payment__section{
