@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "tammibriggs-amz-clone",
     "public": "build",
     "ignore": [
       "firebase.json",

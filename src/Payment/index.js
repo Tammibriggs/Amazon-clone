@@ -39,23 +39,28 @@ function Payment() {
 
     stripe.confirmCardPayment(clientSecret, {payment_method: {
       card: elements.getElement(CardElement)
-    }}).then(({paymentIntent}) => {
+    }}).then( async ({paymentIntent}) => {
       //paymentIntent = payment confirmation
       const ref = doc(db, 'users', user?.uid, 'orders', paymentIntent.id)
-      setDoc(ref, {
-        basket: basket,
-        amount: paymentIntent.amount,
-        created: paymentIntent.created
-      })
-      setSucceeded(true)
-      setError(null)
-      setProcessing(false)
-      dispatch({
-        type: "EMPTY_BASKET"
-      })
-      history.replace('/orders')
+      try{
+        await setDoc(ref, {
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+        })
+        setSucceeded(true)
+        setError(null)
+        setProcessing(false)
+        dispatch({
+          type: "EMPTY_BASKET"
+        })
+        history.replace('/orders')
+      }catch(err){
+        console.log('This is the error',err)
+      }
     })
-    .catch( () => {
+    .catch((err) => {
+      console.log(err)
       alert(`Unable to process payment
       \nUse a sequence of "42" for card payment`)
       setError(null)
@@ -135,7 +140,6 @@ function Payment() {
                 </button>
               </div>
             </form>
-
           </div>
         </div> 
       </div>
