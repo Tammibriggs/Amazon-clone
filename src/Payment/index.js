@@ -13,30 +13,42 @@ import {doc, setDoc} from 'firebase/firestore'
 
 function Payment() {
   const history = useHistory()
+  const stripe = useStripe()
+  const elements = useElements()
+
   const [{basket, user}, dispatch] = useStateValue()
   const [error, setError] = useState(null)
   const [disabled, setDisabled] = useState(true)
   const [processing, setProcessing] = useState("")
   const [succeeded, setSucceeded] = useState(false)
   const [clientSecret, setClientScret] = useState(true)
+  const total = getBasketTotal(basket) * 100 
 
   // generate the special stript secret which allows us to charge a customer
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios({
-        method: 'post',
-        // Stripe expects the total in a currencies subunits
-        url:`/payments/create?total=${getBasketTotal(basket) * 100 }`
-      })
-      setClientScret(response.data.clientSecret)
+      try {
+        const response = await axios({
+          method: 'post',
+          // Stripe expects the total in a currencies subunits
+          url:`/payments/create?total=${total}`
+        })
+        setClientScret(response.data.clientSecret)
+      }catch(err) {
+      }
     }
-    getClientSecret()
+
+    if(total) {
+      getClientSecret()
+    }
   }, [basket])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if(!basket.length) {
+      return alert(`Unable to process payment \nThere is no item in your shopping cart`)
+    }
     setProcessing(true)
-
     stripe.confirmCardPayment(clientSecret, {payment_method: {
       card: elements.getElement(CardElement)
     }}).then( async ({paymentIntent}) => {
@@ -60,21 +72,18 @@ function Payment() {
       }
     })
     .catch((err) => {
-      console.log(err)
       alert(`Unable to process payment
       \nUse a sequence of "42" for card payment`)
       setError(null)
-      setProcessing(false)
     })
+    setProcessing(true)
   }
 
   const handleChange = event => {
+    console.log('reached in here')
     setDisabled(event.empty)
     setError(event.error ? event.error.message : '')
   }
-
-  const stripe = useStripe()
-  const elements = useElements()
 
   return (
     <div className="payment">
@@ -112,14 +121,16 @@ function Payment() {
         </div>
         
         <div className="payment__section">
-          <div className="payment__title">
-            <h3>Payment Method</h3> 
-            <small>
-              Use a sequence of "42" for card payment
-            </small>
+          <div className="payment__test-info">
+            <h3>Test Payment</h3> 
+            <ul>
+              <li>Card number: <span>4242424242424242</span></li>
+              <li>Valid future date e.g <span>12/34</span></li>
+              <li>Three-digit CVC e.g <span>424</span></li>
+              <li>Zip code e.g <span>42424</span></li>
+            </ul>
           </div>
           <div className="payment__details">
-
             <form onSubmit={handleSubmit}>
               {/* Errors */}
               {error && <div style={{color:'red'}}>{error}</div>}

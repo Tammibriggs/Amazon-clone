@@ -20,6 +20,7 @@
   color: rgb(60, 112, 190);
   border-radius: 5px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .checkoutProduct__image{

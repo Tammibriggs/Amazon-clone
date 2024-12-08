@@ -13,49 +13,49 @@ function Home() {
         <div className="home__row">
           <Product
             id={4}
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+            title="Square wooden light weight medium laundry basket"
             price={98.09}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            image="/basket.png"
             rating={5}
           />
           
           <Product
             id={2}
-            title="The Lean Startup: How Constant Innovation Create Radically Successful Businesses Paperback"
+            title="500-watt QuickBlend Stainless Steel Kitchen Blender"
             price={29.99}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL.SX325_B01,204,203,200_.jpg"
+            image="/blender.png"
             rating={5}
           />
 
           <Product
             id={3}
-            title="Samsung LC49RG90SSUXEN 49 Curve Led Gaming Monitor"
+            title="PulseMax Smartwatch with Heart Rate and Burned calories Tracker"
             price={199.99}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+            image="/watch.png"
             rating={3}
           />
 
           <Product
             id={5}
-            title="New Apple iPad Pro (12.9-inch, Wi-fi, 128GB) - Siver (4th Generation)"
+            title="Playstation and Pad, Immersive Gaming Experience with Stunning Visuals and Lightning-Fast Performance"
             price={598.00}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+            image="/playstation.png"
             rating={5}
           />
 
           <Product 
             id={1}
-            title="Kenwood kMix Stand Miser for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk"
+            title="Fully Automatic Front Loading Washing Machine with Multiple Cycle Options and Advanced Spin Technology"
             price={229.0}
-            image="https://st.depositphotos.com/1765561/4857/i/450/depositphotos_48579839-stock-photo-opened-blue-stand-mixer.jpg"
+            image="/washing-machine.png"
             rating={4}
           />
         
           <Product 
             id={6}
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual QHD 5120 x 1440"
+            title="Epic LC49RG90SSUXEN 49' LED Gaming Monitor - Wide Dual QHD 5120 x 1440"
             price={1094.98}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
+            image="/monitor.png"
             rating={4}
           />
         </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import StarRateRoundedIcon from "@material-ui/icons/StarRateRounded"
 import './Product.css'
 import { useStateValue } from '../StateProvider'
+import { toast } from 'react-toastify'
 
 function Product({id, title, image, price, rating}) {
   const [state, dispatch] = useStateValue()
@@ -17,6 +18,10 @@ function Product({id, title, image, price, rating}) {
         price: price,
         rating: rating,
       },
+    })
+    toast('Item has been added to cart', {
+      hideProgressBar: true,
+      autoClose: 500,
     })
   }
 

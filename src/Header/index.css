@@ -12,20 +12,29 @@
     padding: 10px 0;
 }
 
-.header__logo{
-    width: 100px;
+.header .logo{
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 18px; 
-    margin-top: 18px;
-    padding: 10px 10px 0px 10px;
+    padding: 0px 10px 0px 15px;
+    color: rgb(248, 244, 244);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    background-color: white;
 }
 
 .header__search{
-    display: flex;
     flex: 1;
-    align-items: center;
     border-radius: 24px;
+}
+
+.header__search > div {
+    display: flex;
+    align-items: center;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .header--search{
@@ -81,6 +90,7 @@
     font-size: 13px;
     font-weight: 800;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .header__optionBasket{
@@ -130,6 +140,10 @@
 
 @media(max-width: 550px){
     .header--option:nth-child(3){
+        display: none;
+    }
+
+    .header-email {
         display: none;
     }
 }

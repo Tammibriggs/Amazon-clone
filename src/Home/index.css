@@ -40,6 +40,8 @@
 }
 
 .home__image{
+  max-height: 700px;
+  object-fit: cover;
   width: 100%;
   z-index: -1;
   margin-bottom: -150px;
@@ -68,7 +70,6 @@
   .home__row > div:nth-child(6) {
     grid-column: span 3;
   }
-
 }
 
 @media(max-width: 600px){
